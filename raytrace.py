@@ -8,56 +8,10 @@ import msvcrt as m
 import pygame
 from pygame.locals import *
 
-def setcol(i,j,xm,ym,rc):
-    l = ((j/xm)+(i/ym)) % 2
-    if rc==2 and l==0:
-        rc = 1
-    elif rc==2 and l==1:
-        rc = 2
-    elif rc==3:
-        rc = 2
-    elif rc==4 and l==0:
-        rc = 2
-    elif rc==4 and l==1:
-        rc = 3
-    elif rc==5:
-        rc = 3
-    elif rc==6 and l==0:
-        rc = 3
-    elif rc==6 and l==1:
-        rc = 4
-    elif rc==7:
-        rc = 4
-    elif rc==8 and l==0:
-        rc = 4
-    elif rc==8 and l==1:
-        rc = 5
-    elif rc==9:
-        rc = 5
-    elif rc==10 and l==0:
-        rc = 5
-    elif rc==10 and l==1:
-        rc = 6
-    elif rc==11:
-        rc = 6
-    elif rc==12 and l==0:
-        rc = 6
-    elif rc==12 and l==1:
-        rc = 7
-    elif rc==13:
-        rc = 7
-    elif rc==14 and l==0:
-        rc = 7
-    elif rc==14 and l==1:
-        rc = 8
-    elif rc==15:
-        rc = 8
-    return rc
-
 def main():
     # var ecrans
-    width = 3440    
-    height = 1440
+    width = 1280    
+    height = 720
 
     # set le screen
     screen=pygame.display.set_mode((width,height))
@@ -97,7 +51,7 @@ def main():
             ba = 3
             dx = j-(width/2)
             dy = (height/2)-i
-            dz = 1850
+            dz = 1200
             dd = dx*dx + dy*dy + dz*dz
             # start ray
             while 1 == 1:
@@ -183,7 +137,53 @@ def main():
         # Affichage
         pygame.display.flip()
     m.getch()
-    
+
+# Calc couleur
+def setcol(i,j,xm,ym,rc):
+    l = ((j/xm)+(i/ym)) % 2
+    if rc==2 and l==0:
+        rc = 1
+    elif rc==2 and l==1:
+        rc = 2
+    elif rc==3:
+        rc = 2
+    elif rc==4 and l==0:
+        rc = 2
+    elif rc==4 and l==1:
+        rc = 3
+    elif rc==5:
+        rc = 3
+    elif rc==6 and l==0:
+        rc = 3
+    elif rc==6 and l==1:
+        rc = 4
+    elif rc==7:
+        rc = 4
+    elif rc==8 and l==0:
+        rc = 4
+    elif rc==8 and l==1:
+        rc = 5
+    elif rc==9:
+        rc = 5
+    elif rc==10 and l==0:
+        rc = 5
+    elif rc==10 and l==1:
+        rc = 6
+    elif rc==11:
+        rc = 6
+    elif rc==12 and l==0:
+        rc = 6
+    elif rc==12 and l==1:
+        rc = 7
+    elif rc==13:
+        rc = 7
+    elif rc==14 and l==0:
+        rc = 7
+    elif rc==14 and l==1:
+        rc = 8
+    elif rc==15:
+        rc = 8
+    return rc 
 
 # true code    
 main()
